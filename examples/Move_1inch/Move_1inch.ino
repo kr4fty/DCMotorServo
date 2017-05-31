@@ -1,8 +1,7 @@
 //Include Encoder and PID_v1 to enable DCMotorServo's usage of them.
 //(see: http://stackoverflow.com/questions/6504211/is-it-possible-to-include-a-library-from-another-library-using-the-arduino-ide)
-#include <Encoder.h>
 #include <PID_v1.h>
-#include <DCMotorServo.h>
+#include <DCMotorServoPCI.h>
 
 #define pin_dcmoto_dir1 4
 #define pin_dcmoto_dir2 5
