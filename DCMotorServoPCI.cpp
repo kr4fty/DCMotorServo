@@ -1,4 +1,4 @@
-#include <DCMotorServo.h>
+#include "DCMotorServoPCI.h"
 
 
 DCMotorServo::DCMotorServo(uint8_t pin_dir_1, uint8_t pin_dir_2, uint8_t pin_PWM_output, uint8_t pin_encode1, uint8_t pin_encode2)
@@ -116,7 +116,7 @@ void DCMotorServo::_pick_direction() {
     digitalWrite(_pin_dir_1, LOW);
     digitalWrite(_pin_dir_2, HIGH);
   }
-  else
+  else if(_PID_output > 0)
   {
 
     digitalWrite(_pin_dir_1, HIGH);
