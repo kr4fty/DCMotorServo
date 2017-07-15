@@ -3,13 +3,13 @@
 #ifndef DCMotorServo_H
 #define DCMotorServo_H
 
-//#define USE_PINCHANGEINT 1  // Defined if you use Pin-Change Interrupt type
+#define USE_PINCHANGEINT  // Defined if you use Pin-Change Interrupt type
 
-#ifndef SE_PINCHANGEINT
-    #include <Encoder.h>
-#else
+#ifdef USE_PINCHANGEINT
     #define LIBCALL_ENABLEINTERRUPT 
     #include <EncoderPCI.h>
+#else
+    #include <Encoder.h>
 #endif
 #include <PID_v1.h>
 

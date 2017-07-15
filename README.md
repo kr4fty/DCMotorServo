@@ -44,9 +44,8 @@ Update (by Kr4fty)
 
 This is because "Arduino ONE" only has two external interrupt pins and if you wanted to control two motors you would need two "arduino one", one for each encoder. To solve this, the Atmega chips have a special type of interrupts called "PIN CHANGE INTERRUPT" (PCINT) that allows you to have many more pins for interrupts (arduino one has 23 PCINT for example) but only has three interrupt vectors for all of them So you have to see which pin is really interrupting. This suggests that the "interruption" process is slower.
 
-NOTE: To use pin-change interrupts, first define USE_PINCHANGEINT before the header library</br>
-        #define USE_PINCHANGEINT </br>
-        #include <DCMotorServo.h>
+NOTE: To use the encoders in pins with pin-change interruptions, you must first define USE_PINCHANGEINT  within the library DCMotorServo.h</br>
+            #define USE_PINCHANGEINT </br>
 
 More information can be found here: https://www.avrprogrammers.com/howto/int-pin-change
   
