@@ -3,7 +3,7 @@ DCMotorServo
 
 An Arduino Library for controlling DC motors with rotary encoders. This library uses PID and Encoder feedback. It is modeled a little bit after the AccelStepper library.
 
- * Encoder Library, for measuring quadrature encoded signals from [encoder](https://github.com/PaulStoffregen/Encoder)(for external interrupt) or [EncoderPCI](https://github.com/kr4fty/EncoderPCI) (for pin-change interrupt)
+ * Encoder Library, for measuring quadrature encoded signals from [Encoder](https://github.com/PaulStoffregen/Encoder)(for external interrupt) or [EncoderPCI](https://github.com/kr4fty/EncoderPCI) (for pin-change or external interrupt)
  * PID Library, for using encoder feedback to controll the motor from http://playground.arduino.cc/Code/PIDLibrary  also on [GitHub](https://github.com/br3ttb/Arduino-PID-Library)
 
 Circuit
@@ -44,9 +44,9 @@ Update (by Kr4fty)
 
 This is because "Arduino ONE" only has two external interrupt pins and if you wanted to control two motors you would need two "arduino one", one for each encoder. To solve this, the Atmega chips have a special type of interrupts called "PIN CHANGE INTERRUPT" (PCINT) that allows you to have many more pins for interrupts (arduino one has 23 PCINT for example) but only has three interrupt vectors for all of them So you have to see which pin is really interrupting. This suggests that the "interruption" process is slower.
 
-NOTE: To use pin-change interrupts, first define USE_PINCHANGEINT before the header library
-    #define USE_PINCHANGEINT
-    #include <DCMotorServo.h>
+NOTE: To use pin-change interrupts, first define USE_PINCHANGEINT before the header library</br>
+        #define USE_PINCHANGEINT </br>
+        #include <DCMotorServo.h>
 
 More information can be found here: https://www.avrprogrammers.com/howto/int-pin-change
   
