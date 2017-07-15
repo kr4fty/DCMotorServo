@@ -1,12 +1,17 @@
 /* Encoder Library, for measuring quadrature encoded signals
  * http://www.pjrc.com/teensy/td_libs_Encoder.html*/
-#ifndef DCMotorServoPCI_H
-#define DCMotorServoPCI_H
+#ifndef DCMotorServo_H
+#define DCMotorServo_H
 
-#define LIBCALL_ENABLEINTERRUPT 
+//#define USE_PINCHANGEINT 1  // Defined if you use Pin-Change Interrupt type
+
+#ifndef SE_PINCHANGEINT
+    #include <Encoder.h>
+#else
+    #define LIBCALL_ENABLEINTERRUPT 
+    #include <EncoderPCI.h>
+#endif
 #include <PID_v1.h>
-#include <Arduino.h>
-#include <EncoderPCI.h>
 
 /*
 This library uses PID and Encoder feedback to control a DC motor. It is modeled a little bit after the AccelStepper library.

@@ -1,4 +1,4 @@
-#include "DCMotorServoPCI.h"
+#include <DCMotorServo.h>
 
 
 DCMotorServo::DCMotorServo(uint8_t pin_dir_1, uint8_t pin_dir_2, uint8_t pin_PWM_output, uint8_t pin_encode1, uint8_t pin_encode2)
